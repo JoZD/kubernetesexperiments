@@ -1,0 +1,5 @@
+This is only resposible to match a pod, with a node and why
+
+the kubelet is the one that created the pod, the schedule only says where to place it 
+
+the scheduler ranks the nodes available

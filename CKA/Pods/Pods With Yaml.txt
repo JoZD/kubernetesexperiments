@@ -1,0 +1,21 @@
+
+
+
+A K8s definition file always contains the following MUST:
+
+
+
+apiVersion: #Apiversion, kubernetes api (value for pods= v1)
+Kind: #Reffers to the type of object (value for pods = Pod)
+metadata: #Data about the object
+ name: mypod
+ labels:
+ app: myapp
+
+
+
+spec: 
+  containers: #List/Array
+   - name: ngnix
+     image: nginx
+$kubectl describe pod nameofpod #Detailed information about the pod

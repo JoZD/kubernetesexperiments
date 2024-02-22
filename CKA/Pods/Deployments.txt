@@ -1,0 +1,36 @@
+Rolling Updates = updating instances, one after the other, not all at once
+
+The  deployment contains the replicaset, and the pods, is the k8s object in charge of provide the way to roll, pause, and update the instances
+
+
+#The deployment file is similar to the replicaset, the deployment is already included with the replicaset
+
+
+apiVersion: apps/v1
+Kind: Deployment
+metadata:
+ name: Deployment
+ labels:
+  first:deployment
+
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: busybox-pod
+
+
+
+  template:
+    metadata:
+      labels:
+        name: busybox-pod
+    spec:
+      containers:
+      - name: busybox-container
+        image: busybox
+        command:
+        - sh
+        - "-c"
+        - echo Hello Kubernetes! && sleep 3600

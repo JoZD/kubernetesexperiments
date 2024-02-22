@@ -1,0 +1,7 @@
+kubectl ponints (re-directs) at the Kube-api server
+it gets the data from the etctd cluster and replies back 
+
+
+The aapi server creates a pod object, without assiging to a node, this is doing by checking the api server regularly
+The scheduler checks that there is a new pod not assigned, then, it checks which node should be assigned with the pod, and this is stored
+in the etctd server

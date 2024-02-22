@@ -1,0 +1,61 @@
+The Replication controller controls having the same pod more than once in a node, it is also resposible for replacing a failed pod 
+
+It can also span multiple pods within different nodes 
+
+
+Replica Set is the new replication controller 
+
+
+Replication controller is an entire object
+
+
+apiVersion: v1
+Kind: ReplicationController
+metadata:
+  name: myrc
+  labels:
+    myrc-1
+
+spec: #As we know this service is defined to replicate pods, but which pod?
+  template: #Here, we define which pod is the one, there is no need to set apiversion or kind, since everything below template, is a pod
+    metadata:
+     name: mypod
+     labels:
+	my-pod:version1
+    spec:
+      containers:
+      - name: mycontainer
+        image: image 
+  replicas: 2 #at the same levl of template
+	
+
+
+
+kubectl get replicationcontroller #Check the details of the rc 
+
+
+--------------------------------- Replica set---------------------------------------
+
+apiVersion: apps/v1
+kind: replicaset
+metadata:
+ name: replicaset
+ labels:
+  replicaset:backend
+
+template:
+ metadata:
+  name:mypod
+  labels:
+  mypod:dev
+ spec:
+  containers:
+   - name: mycontainer
+     image: myimage
+ replicas: 3
+ selector:              #Select the pods that the replica set will manage, this is because the replica set can manage pods that were defined before the creation of the replicaset
+  matchLabels:
+   mypod:dev
+ 
+
+kubectl get replicaset

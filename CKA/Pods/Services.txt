@@ -1,0 +1,45 @@
+Services enable the communication, is the networking 
+
+
+--The service listens on a port on the node, and sends the request to the pode, on a port in the pod (node port service)
+
+Services type
+
+Node Port 
+Cluster Ip 
+Load Balancer
+
+
+
+
+--------------- Node Port -----------------------
+It has it's own Ip called, the cluster service ip
+
+node ip = the port of the node (ports go from 30mil to 32767
+port (the port of the service itself)
+target port = the port of the pod
+
+service-definition file 
+
+
+apiVersion: v1
+Kind: Service
+metadata:
+ name: name
+
+spec:
+ type: NodePort
+ ports:
+  - targetPort 80 #port of the pod
+    port 80 #Port of the service itself
+    nodePort: 30008 #Port of the node 
+ selector: #Which pod?
+  app:my app #no matchLabel needed 
+
+
+
+#Node: The service will be automatically spread to other nodes by k8s, using the labels 
+
+
+
+

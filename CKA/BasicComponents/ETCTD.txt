@@ -1,0 +1,36 @@
+ETCTD 
+
+Key-value store 
+
+In K8s it stores info about:
+
+Nodes
+Pods
+Configs
+Secrets
+Accounts
+ROles
+Bindings
+Others
+
+
+Every info gathered from kubectl get .. it's from the ETCD server, every change made to the cluster is stored in etcd
+
+--advertise-client-urls https://$interlalp:2379  >> This is the adress where etcd listens 
+
+The Api server is the one that communicates with etcd 
+
+
+Note: kubeadm deploys etcd as a pod 
+
+To get all keys run #etcdctl get / --prefix -keys-only
+
+In k8s the root directory is called "Registry" inside of it it can be found:
+minions
+pods
+replicasets
+deployments
+roles
+secrets 
+
+Note: In high available envs, where multiple master nodes are present, muiltiple etcd will be, they need to communicate with each other

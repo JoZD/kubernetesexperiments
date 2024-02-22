@@ -1,0 +1,3 @@
+kube-system - Is a namespace that is in charge of deploying pods for the k8s fucntionality 
+
+kube -public #Namespace with objects that should be publicly available

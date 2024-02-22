@@ -1,0 +1,4 @@
+Communication between pod 
+
+
+Kube-proxy examines for new services, whenever a new service come up, it routes the trafficx 

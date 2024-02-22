@@ -1,0 +1,15 @@
+Master Node:
+
+ETCD Cluster + Stores info about cluster
+Kube-apliserver = Orchestrating all operations 
+Kube Controller Manager =r
+kube-scheduler = Ctonroler 
+
+
+Worker nodes 
+kubelet = Listens for instructions from thje apiserver
+Kube-proxy = Networking 
+container runtime engine (Docker)
+
+
+ 

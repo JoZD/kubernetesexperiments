@@ -1,0 +1,21 @@
+Group the pods together, and give a unique interface to reach the pods, the request is forwarded randomly 
+
+
+
+clusterip.yaml
+
+
+apiVersion: v1
+Kind: service
+metadata: 
+	backend 
+
+
+
+spec:
+ type: Clusterip
+ ports: 
+  - targetport: 80 #NOdes port 
+    port: 80
+ selector:
+  key: value #no need to match labels, match labels are only needed by replicaset (for now)

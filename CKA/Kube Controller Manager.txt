@@ -1,0 +1,7 @@
+This continiously checks the status of various components within the system
+Watch status 
+Remediate Status 
+
+-Node controller (uses the api-server, every 5 seconds) 
+-Replica controller (checks replicas number to make it match )
+
